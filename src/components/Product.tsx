@@ -4,6 +4,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import {Button, Container} from "@mui/material";
+import {Link} from "react-router-dom";
 
 interface Props{
     data: ProductDto
@@ -11,8 +12,9 @@ interface Props{
 }
 
 const Product = ({data}: Props) => {
+    const id = data._id
     return(
-        <><CardContent>
+            <><CardContent>
             <Typography sx={{fontSize: 14}} color="text.secondary" gutterBottom>
                 {data.name}
             </Typography>
@@ -25,13 +27,17 @@ const Product = ({data}: Props) => {
                 {data.type}
                 <br/>
                 {data.origin}
+                <br/>
             </Typography>
         </CardContent>
-        <CardActions>
-            <Container>
-                <Button size="small" variant="contained" color="primary" style={{marginLeft: 5}}>Details</Button>
-            </Container>
-        </CardActions></>
+
+            <CardActions>
+                <Container>
+                        <Link to="/about">
+                    <Button size="small" variant="contained" color="primary" style={{marginLeft: 5}}>Details</Button>
+                        </Link>
+                </Container>
+            </CardActions></>
     )
 
 }
