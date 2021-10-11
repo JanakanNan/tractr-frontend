@@ -6,7 +6,3 @@ test('renders without crashing', () =>{
   const div = document.createElement('div');
   ReactDOM.render(<App />, div);
 })
-
-test("should display a blank research input", () =>{
-  const 
-})
